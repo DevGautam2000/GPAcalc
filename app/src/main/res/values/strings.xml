@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">GPAcalc</string>
+    <string name="s">S</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="mp">MP</string>
+    <string name="compensate">10</string>
+    <string name="sub">SUBJECT</string>
+    <string name="credit">CREDIT</string>
+    <string name="Col">GRADE</string>
+    <string name="title">GPA ESTIMATOR</string>
+
+    <string name="gradePrompt" >GRADE</string>
+
+    <string-array name="gradeArr" >
+        <item>GRADE</item>
+        <item>S</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>MP</item>
+    </string-array>
+
+    <string name="creditPrompt" >CREDIT</string>
+
+    <string-array name="creditArr" color="@color/orange">
+        <item>CREDIT</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>3</item>
+        <item>3.5</item>
+        <item>4</item>
+    </string-array>
+
+
+
+</resources>
