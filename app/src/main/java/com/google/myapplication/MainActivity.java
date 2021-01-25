@@ -1,37 +1,47 @@
+/*
+
+        AUTHOR : GAUTAM CHANDRA SAHA
+        DESCRIPTION:  GPA (GRADE POINT AVERAGE) CALCULATOR
+        TIME & DATE :
+        STARTED:  FRIDAY, 15 JAN 2021
+        ENDED WITH VERSION 1.0 ON TUESDAY, 26 JAN 2021
+
+
+*/
+
+
+
 package com.google.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
-//    EditText sub1,sub2,sub3,sub4,sub5,sub6,sub7,sub8,sub9,sub10;
 
     EditText[] sub = new EditText[10];
 
-    TextView title,length;
+    TextView title;
 
-//    Spinner List1,List2,List3,List4,List5,List6,List7,List8,List9,List10;
+//    TextView[] check = new TextView[6];
+
     Spinner[] List = new Spinner[10];
 
-//    Spinner credit1,credit2,credit3,credit4,credit5,credit6,credit7,credit8,credit9,credit10;
     Spinner[] credit = new Spinner[10];
 
     String getCredit,getList;
 
-    boolean runActive = false;
+    Button submit;
 
+
+    int length=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,138 +49,65 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-            runActive=true;
-
+        int defSize = 10;
 
 
 //                FOR TITLE
 
-        title=findViewById(R.id.app_title);
+        title = findViewById(R.id.app_title);
 
-        //                FOR length
+        //                FOR SUBMIT BUTTON
 
-        length=findViewById(R.id.length);
+        submit = findViewById(R.id.submit);
 
-////                FOR SUBJECTS
-//                sub1= findViewById(R.id.sub1);
-//                sub2= findViewById(R.id.sub2);
-//                sub3= findViewById(R.id.sub3);
-//                sub4= findViewById(R.id.sub4);
-//                sub5= findViewById(R.id.sub5);
-//                sub6= findViewById(R.id.sub6);
-//                sub7= findViewById(R.id.sub7);
-//                sub8= findViewById(R.id.sub8);
-//                sub9= findViewById(R.id.sub9);
-//                sub10=findViewById(R.id.sub10);
+//                using loop to grab sub id`s
 
+        for (int i = 0; i < defSize; i++) {
 
-
-//                using loop to grab subid`s
-
-                    for(int i=0; i<10; i++) {
-
-                            String dumSubId = "sub" + (i+1);
-                           int subId = getResources().getIdentifier(dumSubId, "id", getPackageName());
-                            sub[i] = (EditText) findViewById(subId);
-                        }
-
-
-
-////                FOR CREDIT
-//                credit1= findViewById(R.id.credit1);
-//                credit2= findViewById(R.id.credit2);
-//                credit3= findViewById(R.id.credit3);
-//                credit4= findViewById(R.id.credit4);
-//                credit5= findViewById(R.id.credit5);
-//                credit6= findViewById(R.id.credit6);
-//                credit7= findViewById(R.id.credit7);
-//                credit8= findViewById(R.id.credit8);
-//                credit9= findViewById(R.id.credit9);
-//                credit10= findViewById(R.id.credit10);
+            String dumSubId = "sub" + (i + 1);
+            int subId = getResources().getIdentifier(dumSubId, "id", getPackageName());
+            sub[i] = (EditText) findViewById(subId);
+        }
 
         //                using loop to grab credit id`s
 
-        for(int i=0; i<10; i++) {
+        for (int i = 0; i < defSize; i++) {
 
-            String dumCreditId = "credit" + (i+1);
+            String dumCreditId = "credit" + (i + 1);
             int creditId = getResources().getIdentifier(dumCreditId, "id", getPackageName());
             credit[i] = (Spinner) findViewById(creditId);
         }
 
-
-
-////                FOR GRADE
-//                List1= findViewById(R.id.list1);
-//                List2= findViewById(R.id.list2);
-//                List3= findViewById(R.id.list3);
-//                List4= findViewById(R.id.list4);
-//                List5= findViewById(R.id.list5);
-//                List6= findViewById(R.id.list6);
-//                List7= findViewById(R.id.list7);
-//                List8= findViewById(R.id.list8);
-//                List9= findViewById(R.id.list9);
-//                List10= findViewById(R.id.list10);
-
         //                using loop to grab grade id`s
 
-        for(int i=0; i<10; i++) {
+        for (int i = 0; i < defSize; i++) {
 
-            String dumGradeId = "list" + (i+1);
+            String dumGradeId = "list" + (i + 1);
             int listId = getResources().getIdentifier(dumGradeId, "id", getPackageName());
             List[i] = (Spinner) findViewById(listId);
         }
 
 
 
-
 //___________________________________________________________________________________________
 
-        ArrayAdapter adapter= ArrayAdapter.createFromResource(this,R.array.creditArr,android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.creditArr, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-
-//        //  SET ADAPTER FOR CREDIT
-//        credit1.setAdapter(adapter);
-//        credit2.setAdapter(adapter);
-//        credit3.setAdapter(adapter);
-//        credit4.setAdapter(adapter);
-//        credit5.setAdapter(adapter);
-//        credit6.setAdapter(adapter);
-//        credit7.setAdapter(adapter);
-//        credit8.setAdapter(adapter);
-//        credit9.setAdapter(adapter);
-//        credit10.setAdapter(adapter);
 
         //                using loop to set adapter for credit
 
-        for(int i=0; i<10; i++) {
+        for (int i = 0; i < defSize; i++) {
 
             credit[i].setAdapter(adapter);
         }
 
 
-
-
-        ArrayAdapter adapter2= ArrayAdapter.createFromResource(this,R.array.gradeArr,android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.gradeArr, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-//        ////        SET ADAPTER FOR GRADE
-//
-//        List1.setAdapter(adapter2);
-//        List2.setAdapter(adapter2);
-//        List3.setAdapter(adapter2);
-//        List4.setAdapter(adapter2);
-//        List5.setAdapter(adapter2);
-//        List6.setAdapter(adapter2);
-//        List7.setAdapter(adapter2);
-//        List8.setAdapter(adapter2);
-//        List9.setAdapter(adapter2);
-//        List10.setAdapter(adapter2);
-
 
         //                using loop to set adapter for list
 
-        for(int i=0; i<10; i++) {
+        for (int i = 0; i < defSize; i++) {
 
             List[i].setAdapter(adapter2);
         }
@@ -178,859 +115,137 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if (runActive){
-
-            for (int i=0; i<10; i++){
-
-                //_____________________CREDIT 1 /LIST1_________________________________________________________________________
-                int finalI1 = i;
-                credit[i].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                        getCredit= credit[finalI1].getSelectedItem().toString();
-                        getList=List[finalI1].getSelectedItem().toString();
-
-                        boolean check = check(getCredit,getList);
-
-//                    if (!getCredit.equals("CREDIT")){
-//
-//                        String len = length.getText().toString();
-//                        int inc = Integer.parseInt(len);
-//                        inc += 1;
-//                        len= Integer.toString(inc);
-//                        length.setText(len);
-//
-//                    }
-//
-//                    else{
-//
-//                        String len = length.getText().toString();
-//                        int reduce = Integer.parseInt(len);
-//                        reduce -= 1;
-//                        len= Integer.toString(reduce);
-//                        length.setText(len);
-//                    }
+//        ______________________________________________
 
 
-                        if (!check){
+        String[] selectC = new String[10];
+        String[] selectL = new String[10];
 
 
-                            startUpdate(getCredit,getList,finalI1);
-                        }
+        for (int i = 0; i < defSize; i++) {
+
+            selectC[i] = "CREDIT";
+            selectL[i] = "GRADE";
+        }
 
 
 
+        //SUBMIT STARTS HERE
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                MainActivity len = new MainActivity();
+                int j=0;
+
+                for (int i = 0; i < defSize; i++) {
+
+                    getCredit = credit[i].getSelectedItem().toString();
+                    getList = List[i].getSelectedItem().toString();
+
+
+
+                    if (check(getCredit, getList)) {
+
+                        selectC[i-j] = getCredit;
+                        selectL[i-j] = getList;
+
+                        len.length++;
 
                     }
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
+                    else
+                        j++;
 
+
+                }
+
+
+                int nullCheck = 0;
+                for (int i = 0; i < defSize; i++) {
+
+
+                    if (selectC[i].equals("CREDIT") && selectL[i].equals("GRADE") ) {
+
+                        nullCheck++;
                     }
-                });
+                }
 
-                int finalI = finalI1;
-                List[i].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity change = new MainActivity();
+
+                if (nullCheck==defSize){
+
+                    return;
+                }
 
 
-                        getCredit= credit[finalI].getSelectedItem().toString();
-                        getList=List[finalI].getSelectedItem().toString();
-
-                        boolean check = check(getCredit,getCredit);
-
-                        if (!check){
-
-                            startUpdate(getCredit,getList,finalI);
-                        }
-
-                        else{
-
-                        }
+                    startUpdate(selectC,selectL,len);
 
 
 
-                    }
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-//____________________________________________________________________________________________________
+//        LOGIC STARTS HERE
 
             }
-        }
+        });
 
-////<--------------------------------------------------------------------------------------------------------------->
-//
-////______________________CREDIT 2 /LIST 2________________________________________________________________________
-//        credit2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit2.getSelectedItem().toString();
-//                list=List2.getSelectedItem().toString();
-//
-//               boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//               else {
-//
-//                   String len = length.getText().toString();
-//                   int reduce = Integer.parseInt(len);
-//                   reduce -= 1;
-//                   len= Integer.toString(reduce);
-//                   length.setText(len);
-//               }
-//
-//
-//                    if (!check){
-//
-//
-//                            startUpdate(credit,list);
-//                    }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit2.getSelectedItem().toString();
-//                list=List2.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-//        //_______________________CREDIT 3 /LIST 3_______________________________________________________________________
-//        credit3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit3.getSelectedItem().toString();
-//                list=List3.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit3.getSelectedItem().toString();
-//                list=List3.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-//        //___________________CREDIT 4 /LIST 4___________________________________________________________________________
-//        credit4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit4.getSelectedItem().toString();
-//                list=List4.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit4.getSelectedItem().toString();
-//                list=List4.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-//        //____________________CREDIT 5 /LIST 5__________________________________________________________________________
-//        credit5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit5.getSelectedItem().toString();
-//                list=List5.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit5.getSelectedItem().toString();
-//                list=List5.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-//        //____________________CREDIT 6 /LIST 6__________________________________________________________________________
-//        credit6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit6.getSelectedItem().toString();
-//                list=List6.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit6.getSelectedItem().toString();
-//                list=List6.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//        //____________________CREDIT 7 /LIST 7__________________________________________________________________________
-//        credit7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit7.getSelectedItem().toString();
-//                list=List7.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit7.getSelectedItem().toString();
-//                list=List7.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-//
-//// ____________________CREDIT 8 /LIST 8__________________________________________________________________________
-//        credit8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit8.getSelectedItem().toString();
-//                list=List8.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit8.getSelectedItem().toString();
-//                list=List8.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-//
-//// ____________________CREDIT 9 /LIST 9__________________________________________________________________________
-//        credit9.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit9.getSelectedItem().toString();
-//                list=List9.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List9.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit9.getSelectedItem().toString();
-//                list=List9.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-//
-//// ____________________CREDIT 10 /LIST 10__________________________________________________________________________
-//        credit10.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit10.getSelectedItem().toString();
-//                list=List10.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!credit.equals("CREDIT")){
-//
-//                    String len = length.getText().toString();
-//                    int inc = Integer.parseInt(len);
-//                    inc += 1;
-//                    len= Integer.toString(inc);
-//                    length.setText(len);
-//
-//                }
-//
-//
-//                else{
-//
-//                    String len = length.getText().toString();
-//                    int reduce = Integer.parseInt(len);
-//                    reduce -= 1;
-//                    len= Integer.toString(reduce);
-//                    length.setText(len);
-//                }
-//
-//                if (!check){
-//
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-//
-//        List10.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//                credit= credit10.getSelectedItem().toString();
-//                list=List10.getSelectedItem().toString();
-//
-//                boolean check = check(credit,list);
-//
-//                if (!check){
-//
-//                    startUpdate(credit,list);
-//                }
-//
-//                else{
-//
-//                }
-//
-//
-//
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
-////____________________________________________________________________________________________________
-//
-//
-////<--------------------------------------------------------------------------------------------------------->
-//
+
     }
+
+
 
 //    function to check activity in credits and list
-    private boolean check(String credit, String list) {
+        private boolean check (String credit, String list){
 
-        if ((credit.equals("CREDIT") && list.equals("GRADE")) ||
-                (!credit.equals("CREDIT") && list.equals("GRADE")) || (credit.equals("CREDIT") && !list.equals("GRADE"))){
+            if ((credit.equals("CREDIT") && list.equals("GRADE")) ||
+                    (!credit.equals("CREDIT") && list.equals("GRADE")) || (credit.equals("CREDIT") && !list.equals("GRADE"))) {
 
-                return true;
+                return false;
+            }
+
+            return true;
         }
-
-        return false;
-    }
 
 
 //    function to start updating the scores
-    private void startUpdate(String credit, String list, int select) {
+    private void startUpdate(String[] credit, String[] list, MainActivity len ) {
 
 
-        float total_credit=0.0f;
-        float total_point=0.0f;
+
 
         float decPoint,decCredit;
 
-        decPoint= getGradePoint(list);
+
+        float totalPoint=0f;
+        float totalCredit=0f;
+
+        for (int i=0 ; i<len.length ;i++ )
+        {
+
+            decPoint= getGradePoint(list[i]);
 
 
-        if(decPoint>=0f){
+            if(decPoint>=0f ){
 
-            decCredit= Float.parseFloat(credit);
-            total_credit += decCredit;
-            total_point += (decPoint * decCredit);
+
+
+
+                    decCredit = Float.parseFloat(credit[i]);
+
+                    totalPoint += (decPoint * decCredit);
+                    totalCredit += decCredit;
+
+            }
+
+
+
         }
 
+        float gpa = totalPoint / totalCredit;
+        gpa= Math.round(gpa * 100 ) / 100f;
 
-
-//        String len = length.getText().toString();
-//        int select=Integer.parseInt(len);
-
-        float calc_gpa = total_point / total_credit;
-        float gpa=Math.round(calc_gpa);
-
-            if (select==1){
-
-
-                String Gpa= Float.toString(gpa);
-                title.setText(Gpa);
-            }
-
-            else if (select>1){
-
-                String getTitle = title.getText().toString();
-                float prevGpa= Float.parseFloat(getTitle);
-                gpa = (gpa +prevGpa )/ 2.0f;
-
-                String GPA=Float.toString(gpa);
-                title.setText(GPA);
-            }
-
+        String GPA=Float.toString(gpa);
+        title.setText(GPA);
 
 
 
@@ -1041,19 +256,19 @@ public class MainActivity extends AppCompatActivity {
 
         switch (grade) {
             case "S":
-                return 10.0f;
+                return 10f;
             case "A":
-                return 9.0f;
+                return 9f;
             case "B":
-                return 8.0f;
+                return 8f;
             case "C":
-                return 7.0f;
+                return 7f;
             case "D":
-                return 6.0f;
+                return 6f;
             case "E":
-                return 5.0f;
+                return 5f;
             default:
-                return 0.0f;
+                return 0f;
         }
 
     }
