@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     TextView title;
 
-//    TextView[] check = new TextView[6];
-
     Spinner[] List = new Spinner[10];
 
     Spinner[] credit = new Spinner[10];
@@ -171,20 +169,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                MainActivity change = new MainActivity();
+
 
                 if (nullCheck==defSize){
 
+                    title.setText(R.string.title);
                     return;
                 }
 
 
-                    startUpdate(selectC,selectL,len);
-
-
-
-
-//        LOGIC STARTS HERE
+                    startUpdate(selectC,selectL,len); //the logic
 
             }
         });
