@@ -298,7 +298,7 @@
         android:importantForAutofill="no"
         android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub5"
         app:layout_constraintEnd_toEndOf="@+id/credit4"
         app:layout_constraintStart_toStartOf="@+id/credit4"
