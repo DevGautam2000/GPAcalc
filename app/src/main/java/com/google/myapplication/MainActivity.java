@@ -173,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (nullCheck==defSize){
 
+                    title.setText(R.string.title);
                     return;
                 }
 

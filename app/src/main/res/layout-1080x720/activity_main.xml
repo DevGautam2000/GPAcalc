@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:animateLayoutChanges="false"
-    android:background="@color/black"
+    android:background="@color/white"
     android:padding="5dp"
     tools:context=".MainActivity">
 
@@ -15,7 +15,7 @@
         android:id="@+id/sub1"
         android:layout_width="0dp"
         android:layout_height="31dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="90dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
@@ -25,7 +25,7 @@
         android:includeFontPadding="false"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/sub2"
         app:layout_constraintEnd_toStartOf="@+id/credit1"
@@ -48,7 +48,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub1"
@@ -76,7 +76,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -91,7 +91,7 @@
         android:fontFamily="casual"
         android:freezesText="true"
         android:gravity="center_horizontal"
-        android:padding="5dp"
+        android:padding="3dp"
         android:text="@string/title"
 
         android:textColor="@color/white"
@@ -111,7 +111,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub1"
         app:layout_constraintStart_toStartOf="@+id/sub1"
@@ -128,7 +128,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub2"
@@ -154,7 +154,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -171,7 +171,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub2"
         app:layout_constraintStart_toStartOf="@+id/sub2"
@@ -188,7 +188,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub3"
@@ -214,7 +214,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -230,7 +230,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub3"
         app:layout_constraintStart_toStartOf="@+id/sub3"
@@ -247,7 +247,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub4"
@@ -273,7 +273,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -289,7 +289,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub4"
         app:layout_constraintStart_toStartOf="@+id/sub4"
@@ -305,7 +305,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub5"
@@ -329,10 +329,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/radius"
+            android:dropDownWidth="match_parent"
             android:entries="@array/gradeArr"
-
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+
+            android:popupBackground="@drawable/drop"
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
     </LinearLayout>
@@ -347,7 +348,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub5"
         app:layout_constraintHorizontal_bias="1.0"
@@ -364,7 +365,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub6"
@@ -390,7 +391,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -406,7 +407,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub6"
         app:layout_constraintHorizontal_bias="1.0"
@@ -423,7 +424,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub7"
@@ -449,7 +450,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -466,7 +467,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub7"
         app:layout_constraintHorizontal_bias="1.0"
@@ -483,7 +484,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub8"
@@ -509,7 +510,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -525,7 +526,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub8"
         app:layout_constraintHorizontal_bias="1.0"
@@ -542,7 +543,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub9"
@@ -568,7 +569,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -585,7 +586,7 @@
         android:importantForAutofill="no"
         android:inputType="textCapCharacters"
         android:padding="5dp"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/sub9"
         app:layout_constraintHorizontal_bias="1.0"
@@ -602,7 +603,7 @@
         android:entries="@array/creditArr"
         android:importantForAutofill="no"
         android:padding="5dp"
-        android:popupBackground="@drawable/drop_dark"
+        android:popupBackground="@drawable/drop"
         android:prompt="@string/creditPrompt"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/sub10"
@@ -628,7 +629,7 @@
             android:background="@drawable/radius"
             android:entries="@array/gradeArr"
             android:padding="5dp"
-            android:popupBackground="@drawable/drop_dark"
+            android:popupBackground="@drawable/drop"
 
             android:prompt="@string/gradePrompt"
             android:spinnerMode="dropdown" />
@@ -647,13 +648,11 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:backgroundTint="#DF4126"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/credit10"
         app:layout_constraintVertical_bias="0.272" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
