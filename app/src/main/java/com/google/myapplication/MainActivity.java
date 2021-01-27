@@ -41,10 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
     int length=0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        decorView.setSystemUiVisibility(uiOptions);
 
 
         int defSize = 10;
@@ -133,6 +139,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
+
+                View decorView = getWindow().getDecorView();
+// Hide both the navigation bar and the status bar.
+// SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+// a general rule, you should design your app to hide the status bar whenever you
+// hide the navigation bar.
+                int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+
+                decorView.setSystemUiVisibility(uiOptions);
+
                 MainActivity len = new MainActivity();
                 int j=0;
 
@@ -159,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                int nullCheck = 0;
+                int nullCheck=0 ;
                 for (int i = 0; i < defSize; i++) {
 
 
@@ -170,15 +188,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
                 if (nullCheck==defSize){
 
                     title.setText(R.string.title);
                     return;
+
                 }
 
 
                     startUpdate(selectC,selectL,len); //the logic
+
 
             }
         });
@@ -212,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
 
         float totalPoint=0f;
         float totalCredit=0f;
+
 
         for (int i=0 ; i<len.length ;i++ )
         {

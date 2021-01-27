@@ -8,7 +8,6 @@
     android:layout_margin="10dp"
     android:animateLayoutChanges="false"
     android:background="#00000000"
-    android:padding="5dp"
     tools:context=".MainActivity">
 
     <EditText
@@ -628,7 +627,7 @@
         android:background="@drawable/mainrad"
         android:fontFamily="casual"
         android:gravity="center_horizontal|center_vertical"
-        android:padding="2dp"
+        android:padding="1dp"
         android:text="@string/Submit"
         android:textColor="@color/white"
         android:textSize="15sp"
@@ -641,5 +640,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/credit10"
         app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:text="@string/developer"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
