@@ -14,12 +14,16 @@
 package com.google.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -36,15 +40,25 @@ public class MainActivity extends AppCompatActivity {
 
     String getCredit,getList;
 
+    int length=0;
+
     Button submit;
 
+    ImageView reset,menu;
 
-    int length=0;
+    DrawerLayout drawerLayout;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        decorView.setSystemUiVisibility(uiOptions);
 
 
         int defSize = 10;
@@ -64,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
             String dumSubId = "sub" + (i + 1);
             int subId = getResources().getIdentifier(dumSubId, "id", getPackageName());
-            sub[i] = (EditText) findViewById(subId);
+            sub[i] =findViewById(subId);
         }
 
         //                using loop to grab credit id`s
@@ -133,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
                 MainActivity len = new MainActivity();
                 int j=0;
 
@@ -159,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                int nullCheck = 0;
+                int nullCheck=0 ;
                 for (int i = 0; i < defSize; i++) {
 
 
@@ -170,19 +186,64 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
                 if (nullCheck==defSize){
 
                     title.setText(R.string.title);
                     return;
+
                 }
 
 
                     startUpdate(selectC,selectL,len); //the logic
 
+
             }
         });
 
+
+
+        //RESET AND NAV MENU
+
+        reset = findViewById(R.id.reset);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                for (int i = 0; i < defSize; i++) {
+
+                    selectC[i] = "CREDIT";
+                    selectL[i] = "GRADE";
+
+
+                        credit[i].setAdapter(adapter);
+
+                        List[i].setAdapter(adapter2);
+
+                        sub[i].setText(null);
+
+
+                }
+
+                title.setText(R.string.title);
+
+
+
+            }
+
+
+
+        });
+
+
+        menu=findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(MainActivity.this, NavMenu.class));
+            }
+        });
 
     }
 
@@ -212,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
 
         float totalPoint=0f;
         float totalCredit=0f;
+
 
         for (int i=0 ; i<len.length ;i++ )
         {

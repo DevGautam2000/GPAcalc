@@ -10,4 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#F44336</color>
     <color name="or_light">#D5D1C9</color>
+    <color name="ss_background">#FFFFFF</color>
+    <color name="Title_text">#000000</color>
+    <color name="navb">#FFFFFF</color>
 </resources>
