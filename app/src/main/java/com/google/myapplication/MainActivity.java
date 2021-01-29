@@ -14,12 +14,16 @@
 package com.google.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -36,10 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
     String getCredit,getList;
 
+    int length=0;
+
     Button submit;
 
+    ImageView reset,menu;
 
-    int length=0;
+    DrawerLayout drawerLayout;
+
 
 
     @Override
@@ -70,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
             String dumSubId = "sub" + (i + 1);
             int subId = getResources().getIdentifier(dumSubId, "id", getPackageName());
-            sub[i] = (EditText) findViewById(subId);
+            sub[i] =findViewById(subId);
         }
 
         //                using loop to grab credit id`s
@@ -141,16 +149,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-                View decorView = getWindow().getDecorView();
-// Hide both the navigation bar and the status bar.
-// SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
-// a general rule, you should design your app to hide the status bar whenever you
-// hide the navigation bar.
-                int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-
-                decorView.setSystemUiVisibility(uiOptions);
-
                 MainActivity len = new MainActivity();
                 int j=0;
 
@@ -202,6 +200,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        //RESET AND NAV MENU
+
+        reset = findViewById(R.id.reset);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                for (int i = 0; i < defSize; i++) {
+
+                    selectC[i] = "CREDIT";
+                    selectL[i] = "GRADE";
+
+
+                        credit[i].setAdapter(adapter);
+
+                        List[i].setAdapter(adapter2);
+
+                        sub[i].setText(null);
+
+
+                }
+
+                title.setText(R.string.title);
+
+
+
+            }
+
+
+
+        });
+
+
+        menu=findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(MainActivity.this, NavMenu.class));
+            }
+        });
 
     }
 

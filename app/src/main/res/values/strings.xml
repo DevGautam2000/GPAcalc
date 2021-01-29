@@ -53,6 +53,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="App_n">GPAcalc Version 1.0</string>
+
+    <string name="HOW">How to use GPAcalc?
+        <br><br>GPA or Grade Point Average is a number that indicates how well or how high you scored in your courses on average.</br></br>
+        <br><br>To calculate your GPA fill in the CREDIT column with the credit of the subject and specify the corresponding grade achieved in the GRADE column.</br></br>
+                Then click on calulate button to see your GPA.
+        <br><br>The button on the right is a reset button if you wish to reset the columns.</br></br></string>
 
 
 </resources>
