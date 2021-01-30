@@ -5,6 +5,7 @@
     android:id="@+id/Navlay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="false"
     android:background="@color/orange"
     tools:context=".NavMenu">
 
@@ -114,8 +115,7 @@
             android:id="@+id/mail"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            app:srcCompat="@drawable/mail"
-            />
+            app:srcCompat="@drawable/mail" />
     </LinearLayout>
 
     <TextView
@@ -130,5 +130,16 @@
         app:layout_constraintBottom_toTopOf="@+id/Linkbed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/hom"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class NavMenu extends AppCompatActivity {
 
-    ImageView instagram,linkedin,github;
+    ImageView instagram,linkedin,github,home;
 
     ImageView mail;
 
@@ -32,6 +32,17 @@ public class NavMenu extends AppCompatActivity {
                 "\nCheck source on GitHub, link is attached at bottom.\n"));
 
 
+
+        home=findViewById(R.id.hom);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getParentActivityIntent();
+                finish();
+            }
+        });
 
         instagram=findViewById(R.id.instagram);
 
