@@ -653,7 +653,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/app_title"
         app:layout_constraintStart_toStartOf="@+id/app_title"
         app:layout_constraintTop_toTopOf="@+id/app_title"
-        app:srcCompat="@drawable/ic_info" />
+        app:srcCompat="@drawable/ic_info"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/reset"
@@ -667,7 +668,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/app_title"
         app:layout_constraintEnd_toEndOf="@+id/app_title"
         app:layout_constraintTop_toTopOf="@+id/app_title"
-        app:srcCompat="@drawable/reset" />
+        app:srcCompat="@drawable/reset"
+        tools:ignore="VectorDrawableCompat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
