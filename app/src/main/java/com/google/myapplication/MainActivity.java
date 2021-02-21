@@ -46,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView reset,menu;
 
-    DrawerLayout drawerLayout;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

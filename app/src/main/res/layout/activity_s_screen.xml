@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="78dp"
-        android:layout_height="70dp"
+        android:layout_width="75dp"
+        android:layout_height="79dp"
         android:contentDescription="@string/title"
         android:foregroundGravity="center_vertical|center|center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
