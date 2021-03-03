@@ -14,7 +14,7 @@ Select your credit
 
 Select your grade
 
-<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/grade.png"  alt="Preview" width=400>
+<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/grade.png"  alt="Preview" width=500>
 
 Its done! 
 
