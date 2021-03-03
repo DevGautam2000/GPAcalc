@@ -1,6 +1,6 @@
 # GPAcalc
-<mark>this is for screen in range for 4.5 to 5"<br>
-For larger screens look into the main branch</mark>
+<strong><i>this is for screen in range for 4.5 to 5"<br>
+For larger screens look into the main branch</i></strong>
 
 Grade Point Average calculator
 
