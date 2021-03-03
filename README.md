@@ -12,6 +12,7 @@ Select your credit
 
 ![Previews](https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/credit.png | width=100)
 
+![Previews]<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/credit.png" width=100>
 
 Select your grade
 
