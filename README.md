@@ -15,7 +15,7 @@ Select your credit
 
 Select your grade
 
-![Previews](https://raw.github.com/DevGautam2000/GPAcalc/app-preview/images/grade.png)
+![Previews](https://raw.github.com/DevGautam2000/GPAcalc/app-preview/images/grade2.png)
 
 
 Its done! 
