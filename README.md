@@ -6,4 +6,4 @@ Grade Point Average calculator
 
 for 10 point system
 
-[url=https://postimg.cc/CnqVtpCN][img]https://i.postimg.cc/CnqVtpCN/appSimul.png[/img][/url]
+![Previews](https://raw.github.com/DevGautam2000/GPAcalc/app-preview/images/dark.png)
