@@ -6,7 +6,7 @@ For larger screens look into the main branch</i></strong>
 
 <img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/appSimul.png"  alt="Preview" width=400>
 
-<center>Select your credit</center>
+<centre>Select your credit</centre>
 
 <img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/credit.png"  alt="Preview" width=400>
 
