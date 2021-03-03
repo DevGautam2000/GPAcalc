@@ -1,6 +1,6 @@
 # GPAcalc
 <strong><i>this is for screen in range for 4.5 to 5"<br>
-For larger screens look into the main branch</i></strong>
+For larger screens look into the main branch(Only if want to import else looks same on larger screens too)</i></strong>
 
 <h3>Grade Point Average calculator<br>For 10 point system</h3>
 
@@ -12,7 +12,7 @@ Select your credit
 
 Select your grade
 
-<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/grade.png"  alt="Preview" width=420><br><br>
+<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/grade.png"  alt="Preview" width=2rem><br><br>
 
 Its done! 
 
