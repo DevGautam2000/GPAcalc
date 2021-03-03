@@ -22,4 +22,6 @@ Its done!
 ![Previews](https://raw.github.com/DevGautam2000/GPAcalc/app-preview/images/calculated.png)
 
 For "DARK" lovers
+
+
 ![Previews](https://raw.github.com/DevGautam2000/GPAcalc/app-preview/images/dark.png)
