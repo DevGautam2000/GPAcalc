@@ -6,24 +6,20 @@ Grade Point Average calculator
 
 for 10 point system
 
-![Previews](https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/appSimul.png | width=100)
+<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/appSimul.png"  alt="Preview" width=400>
 
 Select your credit
 
-![Previews](https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/credit.png | width=100)
-
-<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/credit.png"  alt="Preview" width=300>
+<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/credit.png"  alt="Preview" width=400>
 
 Select your grade
 
-![Previews](https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/grade2.png | width=100)
-
+<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/grade.png"  alt="Preview" width=400>
 
 Its done! 
 
-![Previews](https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/calculated.png | width=100)
-
+<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/calculated.png"  alt="Preview" width=400>
 
 For "DARK" lovers
 
-![Previews](https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/dark.png | width=100)
+<img src="https://raw.github.com/DevGautam2000/GPAcalc/master_smaller_screens/images/dark.png"  alt="Preview" width=400>
